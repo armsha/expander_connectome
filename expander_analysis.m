@@ -6,7 +6,7 @@ filepath = 'mat/';
 filenames = {'human'        % Average human
              'cat'          % Mixed species cat
              'roundworm'    % C elegans, the only complete connectome
-             'fly'      % Medulla of drosophila melanogaster
+             'fly'          % Medulla of drosophila melanogaster
              'macaque'      % Rhesus ape
              'mouse'        % mouse
              'rat'};        % Rattus norvegicus
@@ -23,7 +23,6 @@ for file_index=1:numfiles
     
     % Make A symmetric
     A = max(A,A');
-    
     A = min(A,1);
     
     % Number of nodes
@@ -98,7 +97,6 @@ for file_index=1:numfiles
                   lower(filenames{file_index}(2:end))];
     p = mtit(fig,title_name,'fontsize',14);
     
-    
     set(fig,'Units','Inches');
     pos = get(fig,'Position');
     set(fig,'PaperPositionMode','Auto','PaperUnits',...
@@ -112,10 +110,10 @@ end
 % Print stats and make plots to compare expansion and
 % subgraph centrality between species
 stats
-figure;
-stem(stats(:,1:3))
 
-figure;
-stem(log(stats(:,4:5)))
+%% Unused plots below
+%figure;
+%stem(stats(:,1:3))
 
-
+%figure;
+%stem(log(stats(:,4:5)))
